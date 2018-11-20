@@ -1,5 +1,5 @@
 # Blogtastic
-Blog project in Practical PHP and MySQL, by Jono Bacon.
+Blog project in **__Practical PHP and MySQL__**, by Jono Bacon.
 
 Wonderful idea ruined by sloppy execution. The book is filled with errors, I've tried my best to fix them and in some places had to make some minor changes.
 

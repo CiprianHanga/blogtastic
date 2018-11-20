@@ -7,7 +7,7 @@ $config_sitename = "Funny Old World";
  * Linux: $config_basedir = "http://localhost:8089/blogtastic/";
  * Windows: $config_basedir = "http://localhost/work/blogtastic/";
  */
-$config_basedir = "http://localhost/work/blogtastic/";
+$config_basedir = "http://localhost:8089/blogtastic/";
 $config_author = "Ciprian Hanga";
 
 $dbhost = "localhost";
