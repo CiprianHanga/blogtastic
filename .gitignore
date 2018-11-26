@@ -1,6 +1,11 @@
 
 # Created by https://www.gitignore.io/api/vim,linux,vagrant,netbeans,visualstudiocode
 
+
+## ANY DIRS I NEED TO REMOVE ##
+
+
+
 ### Linux ###
 *~
 
@@ -18,8 +23,6 @@
 
 ### Borland Turbo C++ ###
 
-### Gnome Builder ###
-.buildconfig
 
 ### NetBeans ###
 nbproject/private/
@@ -32,7 +35,6 @@ nbdist/
 ### Vagrant ###
 # General
 .vagrant/
-test/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.logs

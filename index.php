@@ -1,16 +1,44 @@
 <?php
 include ("header.php");
-?>
 
-<h1>Welcome! </h1>
-<p>Welcome to my site!</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed imperdiet purus, et eleifend odio. Nulla non luctus neque. In condimentum quam eu orci luctus, in imperdiet odio blandit. Integer dictum elementum lorem, vel suscipit quam lobortis quis. Donec scelerisque enim vel tempus sodales. Curabitur sollicitudin, risus in tempor porttitor, eros purus hendrerit quam, vitae iaculis mi lectus vel dui. Integer quis suscipit neque. Phasellus ullamcorper pulvinar lectus eget viverra. </p>
-<p>You can also find about:</p>
-<ul>
-    <li>My interests</li>
-    <li>My dogs</li>
-    <li>Stuff</li>
-</ul>
+/**
+ * Query the last blogpost from the database.
+ */
+$sql = "SELECT entries.*, categories.cat FROM entries, categories "
+        . "WHERE entries.cat_id = categories.id "
+        . "ORDER BY dateposted DESC "
+        . "LIMIT 1;";
+$result = mysql_query($sql);
+$row = mysql_fetch_assoc($result);
 
-<?php require ("footer.php"); ?>
+/**
+ * Display the last blogpost.
+ */
+echo "<h2>$row[subject]</h2>";
+echo "<p>In $row[cat] - Posted on " . date("D jS F Y (g.i A)", strtotime($row['dateposted'])) . "</p>";
+echo "<p>$row[body]</p>";
+
+/**
+ * Query the comments for the last blogpost.
+ */
+$commsql = "SELECT name FROM comments "
+        . "WHERE blog_id = " . $row['id']
+        . " ORDER BY dateposted;";
+$commresult = mysql_query($commsql);
+$numrows_comm = mysql_num_rows($commresult);
+
+/**
+ * Comments summary for the blogpost shown.
+ */
+if ($numrows_comm == 0) {
+    echo "<p>No comments.";
+} else {
+    echo "<p>($numrows_comm) comments : ";
+    while ($commrow = mysql_fetch_assoc($commresult)) {
+        echo "$commrow[name] ";
+    }
+}
+echo "</p>";
+
+require ("footer.php"); 
 

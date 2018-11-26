@@ -1,5 +1,7 @@
 <?php
     require ("config.php");
+    $db = mysql_connect($dbhost, $dbuser, $dbpassword);
+    mysql_select_db($dbdatabase, $db) or die("shoot!");
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,9 +24,10 @@
         &bull;
         <a href="<?php echo $config_basedir; ?>about.php">About</a>
         &bull;
-        <a href="<?php echo $config_basedir; ?>faq.php">Faq</a>
+        <a href="<?php echo $config_basedir; ?>categories.php">Categories</a>
         &bull;
-        <a href="<?php echo $config_basedir; ?>tech.php">Technical Details</a>
+        <a href="<?php echo $config_basedir; ?>">Login</a>
+
     </div> <!-- closes "menu" div -->
     <div id="container">
         <div id="bar">
