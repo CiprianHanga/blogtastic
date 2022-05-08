@@ -10,7 +10,7 @@
   * Site configuration.
   */
 $config_sitename = "Funny Old World";
-$config_basedir = "http://localhost/work/blogtastic/";
+$config_basedir = "http://localhost/proiecte/blogtastic/";
 $config_author = "Ciprian Hanga";
 
 /**

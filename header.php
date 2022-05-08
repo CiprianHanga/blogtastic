@@ -1,7 +1,7 @@
 <?php
     require ("config.php");
-    $db = mysql_connect($dbhost, $dbuser, $dbpassword);
-    mysql_select_db($dbdatabase, $db) or die("shoot!");
+    $db = mysqli_connect($dbhost, $dbuser, $dbpassword);
+    mysqli_select_db($dbdatabase, $db) or die("shoot!");
 ?>
 <!DOCTYPE html>
 <html>
