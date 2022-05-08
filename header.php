@@ -1,7 +1,9 @@
 <?php
     require ("config.php");
     $db = mysqli_connect($dbhost, $dbuser, $dbpassword);
-    mysqli_select_db($dbdatabase, $db) or die("shoot!");
+    mysqli_select_db($db, "blogtastic") or die("Connection failed: " . mysqli_connect_error());
+    
+
 ?>
 <!DOCTYPE html>
 <html>
